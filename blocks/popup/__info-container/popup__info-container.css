@@ -1,4 +1,4 @@
-.popup_info-container {
+.popup__info-container {
     width: 430px;
     margin: 0;
     padding: 34px 0 37px 0;
@@ -14,7 +14,7 @@
 }
 
 @media screen and (max-width: 1279px){
-    .popup_info-container {
+    .popup__info-container {
          width: 282px;
          padding: 25px 0 25px 0;
     } 
