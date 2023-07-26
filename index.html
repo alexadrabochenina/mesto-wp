@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="pages/index.css">
+  <link rel="icon" href="#">
+  <title>Mesto</title>
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+        <img src="images/header_logo.svg" class="header__avatar" alt="Website name">
+    </header>
+    <main class="content">
+    <hr class="line">
+    <section class="profile">
+        <div class="profile__info-container">
+            <img src="images/profile__avatar.jpeg" class="profile__logo" alt="Avatar">
+            <div class="profile__info">
+                <div class="profile__info-item">
+                    <p class="profile__info-title">Александра Боченина</p>
+                    <button class="profile__edit">
+                        <img src="images/profile__edit-photo.svg" class="profile__edit-photo" alt="Profile edit photo">
+                    </button>
+                </div>
+                <p class="profile__info-subtitle">Исследователь красивых мест</p>
+            </div>
+        </div>
+        <button class="profile__add">
+            <img class="profile__add-photo" src="images/profile__add-photo.svg" alt="Add photo">
+        </button>
+    </section>
+    <section class="photo" aria-label="Секция с фото-галереей">
+        <div class="photo__item">
+            <img src="images/Sochi.jpg" class="photo__item-picture" alt="Sochi">
+            <div class="photo__item-info">
+                <p class="photo__item-info-text">Сочи</p>
+                <img src="images/Like.svg" class="photo__item-info-icon" alt="Like">
+            </div>
+        </div>
+        <div class="photo__item">
+            <img src="images/Cremia.jpg" class="photo__item-picture" alt="Cremia">
+            <div class="photo__item-info">
+                <p class="photo__item-info-text">Крым</p>
+                <img src="images/Like.svg" class="photo__item-info-icon" alt="Like">
+            </div>
+        </div>
+        <div class="photo__item">
+            <img src="images/Altai.jpg" class="photo__item-picture" alt="Altai">
+            <div class="photo__item-info">
+                <p class="photo__item-info-text">Алтай</p>
+                <img src="images/Like.svg" class="photo__item-info-icon" alt="Like">
+            </div>
+        </div>
+        <div class="photo__item">
+            <img src="images/Baikal.jpg" class="photo__item-picture" alt="Baikal">
+            <div class="photo__item-info">
+                <p class="photo__item-info-text">Байкал</p>
+                <img src="images/Like.svg" class="photo__item-info-icon" alt="Like">
+            </div>
+        </div>
+        <div class="photo__item">
+            <img src="images/Dagestan.jpg" class="photo__item-picture" alt="Dagestan">
+            <div class="photo__item-info">
+                <p class="photo__item-info-text">Дагестан</p>
+                <img src="images/Like.svg" class="photo__item-info-icon" alt="Like">
+            </div>
+        </div>
+        <div class="photo__item">
+            <img src="images/Capadokia.jpg" class="photo__item-picture" alt="Capadokia">
+            <div class="photo__item-info">
+                <p class="photo__item-info-text">Кападокия</p>
+                <img src="images/Like.svg" class="photo__item-info-icon" alt="Like">
+            </div>
+        </div>
+    </section>
+    </main>
+    <footer class="footer">© 2023 Mesto Russia</footer>
+    <div class="popup popup_hidden">
+        <div class="popup_info-container">
+            <img src="images/popop__close.svg" class="popup__close" alt="Cross">
+            <div class="popup__info">
+                <h2 class="popup__item">Редактировать профиль</h2>
+                    <div class="popup__container">
+                        <input type="text" class="popup__title">
+                        <input type="text" class="popup__subtitle">
+                    </div>
+            <button class="popup__button">Сохранить</button>
+            </div>
+        </div>
+    </div>
+  </div>
+  <script src="script/index.js"></script>
+  </body>
+</html>

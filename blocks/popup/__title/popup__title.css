@@ -1,0 +1,10 @@
+.popup__title {
+    width: 358px;
+    border-width: 0 0 1px;
+}
+
+@media screen and (max-width: 1279px){
+    .popup__title {
+        width: 238px;
+    }
+}

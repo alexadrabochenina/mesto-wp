@@ -1,0 +1,20 @@
+.profile__edit {
+    width: 24px;
+    height: 24px;
+    margin: 0 0 0 18px;
+    padding: 0;
+    border: none;
+    background-color: black;
+    font-size: 0;
+}
+
+.profile__edit:hover {
+    opacity: 60%;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1279px){
+    .profile__edit {
+        margin: 0 0 0 10px;
+    }
+}

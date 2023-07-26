@@ -1,0 +1,6 @@
+.photo__item {
+    display: flex;
+    flex-direction: column;
+    width: 282px;
+    height: 367px;
+}
