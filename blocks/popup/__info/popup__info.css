@@ -1,3 +1,5 @@
-.poput__info {
-    margin: 34px 36px 0 36px;
+.popup__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }

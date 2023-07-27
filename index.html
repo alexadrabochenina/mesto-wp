@@ -10,87 +10,100 @@
 <body>
   <div class="page">
     <header class="header">
-        <img src="images/header_logo.svg" class="header__avatar" alt="Фото заголовка">
+        <img src="images/header_logo.svg" class="header__logo" alt="Фото заголовка">
     </header>
     <main class="content">
-    <hr class="line">
     <section class="profile">
         <div class="profile__info-container">
             <img src="images/profile__avatar.jpeg" class="profile__logo" alt="Аватарка">
             <div class="profile__info">
                 <div class="profile__info-item">
-                    <p class="profile__info-title">Александра Боченина</p>
-                    <button class="profile__edit">
+                    <h1 class="profile__info-title">Александра Боченина</h1>
+                    <button type="submit" class="profile__edit">
                         <img src="images/profile__edit-photo.svg" class="profile__edit-photo" alt="Кнопка редактировать">
                     </button>
                 </div>
                 <p class="profile__info-subtitle">Исследователь красивых мест</p>
             </div>
         </div>
-        <button class="profile__add">
+        <button type="submit" class="profile__add">
             <img class="profile__add-photo" src="images/profile__add-photo.svg" alt="Кнопка добавить фото">
         </button>
     </section>
     <section class="photo" aria-label="Секция с фото-галереей">
-        <div class="photo__item">
+        <article class="photo__item">
             <img src="images/Sochi.jpg" class="photo__item-picture" alt="Сочи">
             <div class="photo__item-info">
-                <p class="photo__item-info-text">Сочи</p>
-                <img src="images/Like.svg" class="photo__item-info-icon" alt="Кнопка сердце">
+                <h2 class="photo__item-info-text">Сочи</h2>
+                <button type="submit" class="photo__item-info-button">
+                    <img src="images/Like.svg" class="photo__item-info-icon" alt="Кнопка сердце">
+                </button>
             </div>
-        </div>
-        <div class="photo__item">
+        </article>
+        <article class="photo__item">
             <img src="images/Cremia.jpg" class="photo__item-picture" alt="Крым">
             <div class="photo__item-info">
-                <p class="photo__item-info-text">Крым</p>
-                <img src="images/Like.svg" class="photo__item-info-icon" alt="Кнопка сердце">
+                <h2 class="photo__item-info-text">Крым</h2>
+                <button type="submit" class="photo__item-info-button">
+                    <img src="images/Like.svg" class="photo__item-info-icon" alt="Кнопка сердце">
+                </button>    
             </div>
-        </div>
-        <div class="photo__item">
+        </article>
+        <article class="photo__item">
             <img src="images/Altai.jpg" class="photo__item-picture" alt="Алтай">
             <div class="photo__item-info">
-                <p class="photo__item-info-text">Алтай</p>
-                <img src="images/Like.svg" class="photo__item-info-icon" alt="Кнопка сердце">
+                <h2 class="photo__item-info-text">Алтай</h2>
+                <button type="submit" class="photo__item-info-button">
+                    <img src="images/Like.svg" class="photo__item-info-icon" alt="Кнопка сердце">
+                </button>
             </div>
-        </div>
-        <div class="photo__item">
+        </article>
+        <article class="photo__item">
             <img src="images/Baikal.jpg" class="photo__item-picture" alt="Байкал">
             <div class="photo__item-info">
-                <p class="photo__item-info-text">Байкал</p>
-                <img src="images/Like.svg" class="photo__item-info-icon" alt="Кнопка сердце">
+                <h2 class="photo__item-info-text">Байкал</h2>
+                <button type="submit" class="photo__item-info-button">
+                    <img src="images/Like.svg" class="photo__item-info-icon" alt="Кнопка сердце">
+                </button>    
             </div>
-        </div>
-        <div class="photo__item">
+        </article>
+        <article class="photo__item">
             <img src="images/Dagestan.jpg" class="photo__item-picture" alt="Дагестан">
             <div class="photo__item-info">
-                <p class="photo__item-info-text">Дагестан</p>
-                <img src="images/Like.svg" class="photo__item-info-icon" alt="Кнопка сердце">
+                <h2 class="photo__item-info-text">Дагестан</h2>
+                <button type="submit" class="photo__item-info-button">
+                    <img src="images/Like.svg" class="photo__item-info-icon" alt="Кнопка сердце">
+                </button>    
             </div>
-        </div>
-        <div class="photo__item">
+        </article>
+        <article class="photo__item">
             <img src="images/Capadokia.jpg" class="photo__item-picture" alt="Кападокия">
             <div class="photo__item-info">
-                <p class="photo__item-info-text">Кападокия</p>
-                <img src="images/Like.svg" class="photo__item-info-icon" alt="Кнопка сердце">
+                <h2 class="photo__item-info-text">Кападокия</h2>
+                <button type="submit" class="photo__item-info-button">
+                    <img src="images/Like.svg" class="photo__item-info-icon" alt="Кнопка сердце">
+                </button>
             </div>
-        </div>
+        </article>
     </section>
     </main>
-    <footer class="footer">© 2023 Mesto Russia</footer>
-    <div class="popup popup_hidden">
-        <div class="popup__info-container">
-            <img src="images/popop__close.svg" class="popup__close" alt="Крестик">
-            <div class="popup__info">
-                <h2 class="popup__item">Редактировать профиль</h2>
-                <div class="popup__container">
-                    <input type="text" class="popup__title">
-                    <input type="text" class="popup__subtitle">
-                </div>
-                <button class="popup__button">Сохранить</button>
-            </div>
+    <footer>
+        <p class="footer">© 2023 Mesto Russia</p>
+    </footer>
+    <div class="popup">
+        <div class="popup__container">
+            <h2 class="popup__heading">Редактировать профиль</h2>
+            <form class="popup__info" name="Редактирование профиля">
+                <button type="reset" class="popup__close">
+                    <img src="images/popop__close.svg" class="popup__close-icon" alt="Крестик">
+                </button>
+                <input type="text" class="popup__title" name="Имя">
+                <input type="text" class="popup__subtitle" name="Подпись">
+                <button type="submit" class="popup__button">Сохранить</button>
+            </form>
         </div>
     </div>
   </div>
-  <script src="script/index.js"></script>
+  <script src="scripts/index.js"></script>
   </body>
 </html>
