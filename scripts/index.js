@@ -5,6 +5,7 @@ const subtitleEl = document.querySelector('.profile__info-subtitle');
 const popupNameEl = document.querySelector('.popup__input_text_name');
 const popupSubtitleEl = document.querySelector('.popup__input_text_subtitle');
 const openPopupBtn = document.querySelector('.profile__edit');
+const closePopupBtn = document.querySelector('.popup__close');
 
 function openPopup() {
     popupNameEl.value = titleEl.textContent;
@@ -27,5 +28,5 @@ function submitPopup(event) {
 }
 
 openPopupBtn.addEventListener('click', openPopup);
-popupForm.addEventListener('reset', closePopup);
+closePopupBtn.addEventListener('click', closePopup);
 popupForm.addEventListener('submit', submitPopup);
