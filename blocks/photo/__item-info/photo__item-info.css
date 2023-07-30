@@ -1,6 +1,6 @@
 .photo__item-info {
     margin: 0;
-    height: 79px;
+    padding: 0 15px 31px 21px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
