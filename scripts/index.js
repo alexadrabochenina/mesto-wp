@@ -1,4 +1,4 @@
-const popupEdit = document.querySelector('.popup__edit');
+const popupEdit = document.querySelector('.popup_edit');
 const popupEditForm = popupEdit.querySelector('.popup__info');
 const popupEditNameEl = popupEdit.querySelector('.popup__input_text_name');
 const popupEditSubtitleEl = popupEdit.querySelector('.popup__input_text_subtitle');
@@ -7,7 +7,7 @@ const titleEditEl = document.querySelector('.profile__info-title');
 const subtitleEditEl = document.querySelector('.profile__info-subtitle');
 const openEditPopupBtn = document.querySelector('.profile__edit');
 
-const popupAdd = document.querySelector('.popup__add');
+const popupAdd = document.querySelector('.popup_add');
 const popupAddForm = popupAdd.querySelector('.popup__info');
 const popupAddNameEl = popupAdd.querySelector('.popup__input_text_place-name');
 const popupAddLinkEl = popupAdd.querySelector('.popup__input_text_place-link');
@@ -17,7 +17,7 @@ const openAddPopupBtn = document.querySelector('.profile__add');
 const likeBtn = document.querySelector('.photo__item-info-button');
 const photo = document.querySelector('.photo');
 
-const popupImage = document.querySelector('.popup__image');
+const popupImage = document.querySelector('.popup_image');
 const popupImagePhotoEl = popupImage.querySelector('.popup__photo');
 const popupImageCaptionEl = popupImage.querySelector('.popup__caption');
 const closeImagePopupBtn = popupImage.querySelector('.popup__close');
