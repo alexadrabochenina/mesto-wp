@@ -4,7 +4,7 @@
     line-height: 29px;
     margin: 25px 0 0 0;
     color: black;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    white-space: normal;
     overflow: hidden;
+    text-overflow: ellipse;
 }

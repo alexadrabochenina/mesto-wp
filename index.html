@@ -8,102 +8,79 @@
   <title>Mesto</title>
 </head>
 <body>
-  <div class="page">
-    <header class="header">
-        <img src="images/header_logo.svg" class="header__logo" alt="Фото заголовка">
-    </header>
-    <main class="content">
-    <section class="profile">
-        <div class="profile__info-container">
-            <img src="images/profile__avatar.jpeg" class="profile__logo" alt="Аватарка">
-            <div class="profile__info">
-                <div class="profile__info-item">
-                    <h1 class="profile__info-title">Александра Боченина</h1>
-                    <button type="button" class="profile__edit">
-                        <img src="images/profile__edit-photo.svg" class="profile__edit-photo" alt="Кнопка редактировать">
-                    </button>
+    <div class="page">
+        <header class="header">
+            <img src="images/header_logo.svg" class="header__logo" alt="Фото заголовка">
+        </header>
+        <main class="content">
+            <section class="profile">
+                <div class="profile__info-container">
+                    <img src="images/profile__avatar.jpeg" class="profile__logo" alt="Аватарка">
+                    <div class="profile__info">
+                        <div class="profile__info-item">
+                            <h1 class="profile__info-title">Александра Боченина</h1>
+                            <button type="button" class="profile__edit">
+                                <img src="images/profile__edit-photo.svg" class="profile__edit-photo" alt="Кнопка редактировать">
+                            </button>
+                        </div>
+                        <p class="profile__info-subtitle">Исследователь красивых мест</p>
+                    </div>
                 </div>
-                <p class="profile__info-subtitle">Исследователь красивых мест</p>
+                <button type="button" class="profile__add">
+                    <img class="profile__add-photo" src="images/profile__add-photo.svg" alt="Кнопка добавить фото">
+                </button>
+            </section>
+            <section class="photo" aria-label="Секция с фото-галереей"></section>
+        </main>
+        <footer>
+            <p class="footer">© 2023 Mesto Russia</p>
+        </footer>
+        <div class="popup popup__edit">
+            <div class="popup__container">
+                <h2 class="popup__heading">Редактировать профиль</h2>
+                <button type="button" class="popup__close">
+                    <img src="images/popop__close.svg" class="popup__close-icon" alt="Крестик">
+                </button>
+                <form class="popup__info" name="edit">
+                    <input type="text" class="popup__input popup__input_text_name" name="name">
+                    <input type="text" class="popup__input popup__input_text_subtitle" name="subtitle">
+                    <button type="submit" class="popup__button">Сохранить</button>
+                </form>
             </div>
         </div>
-        <button type="button" class="profile__add">
-            <img class="profile__add-photo" src="images/profile__add-photo.svg" alt="Кнопка добавить фото">
-        </button>
-    </section>
-    <section class="photo" aria-label="Секция с фото-галереей">
-        <article class="photo__item">
-            <img src="images/Sochi.jpg" class="photo__item-picture" alt="Сочи">
-            <div class="photo__item-info">
-                <h2 class="photo__item-info-text">Сочи</h2>
-                <button type="button" class="photo__item-info-button">
-                    <img src="images/Like.svg" class="photo__item-info-icon" alt="Кнопка сердце">
+        <div class="popup popup__add">
+            <div class="popup__container">
+                <h2 class="popup__heading">Новое место</h2>
+                <button type="button" class="popup__close">
+                    <img src="images/popop__close.svg" class="popup__close-icon" alt="Крестик">
                 </button>
+                <form class="popup__info" name="edit">
+                    <input type="text" class="popup__input popup__input_text_place-name" name="place-name" placeholder="Название">
+                    <input type="text" class="popup__input popup__input_text_place-link" name="place-url" placeholder="Ссылка на картинку">
+                    <button type="submit" class="popup__button">Создать</button>
+                </form>
             </div>
-        </article>
-        <article class="photo__item">
-            <img src="images/Cremia.jpg" class="photo__item-picture" alt="Крым">
-            <div class="photo__item-info">
-                <h2 class="photo__item-info-text">Крым</h2>
-                <button type="button" class="photo__item-info-button">
-                    <img src="images/Like.svg" class="photo__item-info-icon" alt="Кнопка сердце">
-                </button>    
-            </div>
-        </article>
-        <article class="photo__item">
-            <img src="images/Altai.jpg" class="photo__item-picture" alt="Алтай">
-            <div class="photo__item-info">
-                <h2 class="photo__item-info-text">Алтай</h2>
-                <button type="button" class="photo__item-info-button">
-                    <img src="images/Like.svg" class="photo__item-info-icon" alt="Кнопка сердце">
+        </div>
+        <div class="popup popup__image popup_dark">
+            <figure class="popup__photo-container">
+                <button type="button" class="popup__close">
+                    <img src="images/popop__close.svg" class="popup__close-icon" alt="Крестик">
                 </button>
-            </div>
-        </article>
-        <article class="photo__item">
-            <img src="images/Baikal.jpg" class="photo__item-picture" alt="Байкал">
-            <div class="photo__item-info">
-                <h2 class="photo__item-info-text">Байкал</h2>
-                <button type="button" class="photo__item-info-button">
-                    <img src="images/Like.svg" class="photo__item-info-icon" alt="Кнопка сердце">
-                </button>    
-            </div>
-        </article>
-        <article class="photo__item">
-            <img src="images/Dagestan.jpg" class="photo__item-picture" alt="Дагестан">
-            <div class="photo__item-info">
-                <h2 class="photo__item-info-text">Дагестан</h2>
-                <button type="button" class="photo__item-info-button">
-                    <img src="images/Like.svg" class="photo__item-info-icon" alt="Кнопка сердце">
-                </button>    
-            </div>
-        </article>
-        <article class="photo__item">
-            <img src="images/Capadokia.jpg" class="photo__item-picture" alt="Кападокия">
-            <div class="photo__item-info">
-                <h2 class="photo__item-info-text">Кападокия</h2>
-                <button type="button" class="photo__item-info-button">
-                    <img src="images/Like.svg" class="photo__item-info-icon" alt="Кнопка сердце">
-                </button>
-            </div>
-        </article>
-    </section>
-    </main>
-    <footer>
-        <p class="footer">© 2023 Mesto Russia</p>
-    </footer>
-    <div class="popup">
-        <div class="popup__container">
-            <h2 class="popup__heading">Редактировать профиль</h2>
-            <button type="button" class="popup__close">
-                <img src="images/popop__close.svg" class="popup__close-icon" alt="Крестик">
-            </button>
-            <form class="popup__info" name="edit">
-                <input type="text" class="popup__input popup__input_text_name" name="name">
-                <input type="text" class="popup__input popup__input_text_subtitle" name="subtitle">
-                <button type="submit" class="popup__button">Сохранить</button>
-            </form>
+                <img class="popup__photo" src="_blank" alt="Большое фото">
+                <figcaption class="popup__caption"></figcaption>
+            </figure>
         </div>
     </div>
-  </div>
-  <script src="scripts/index.js"></script>
-  </body>
+    <template id="photo-template">
+        <article class="photo__item">
+            <img class="photo__item-picture" src="" alt="Фото">
+            <div class="photo__item-info">
+                <button class="photo__item-info-delete"></button>
+                <h2 class="photo__item-info-text"></h2>
+                <button class="photo__item-info-button"></button>
+            </div>
+        </article>
+    </template>
+    <script src="scripts/index.js"></script>
+</body>
 </html>

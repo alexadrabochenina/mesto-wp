@@ -1,6 +1,6 @@
-.photo__item {
+.popup__photo-container {
     position: relative;
     display: flex;
     flex-direction: column;
-    width: 282px;
+    gap: 10px;
 }

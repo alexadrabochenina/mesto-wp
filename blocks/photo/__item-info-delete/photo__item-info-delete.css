@@ -1,0 +1,16 @@
+.photo__item-info-delete {
+    position: absolute;
+    padding: 0;
+    width: 18px;
+    height: 19px;
+    top: 20px;
+    right: 20px;
+    border: none;
+    background-color: transparent;
+    background-image: url(../../../images/Trash.svg);
+}
+
+.photo__item-info-delete:hover {
+    opacity: 50%;
+    cursor: pointer;
+}
