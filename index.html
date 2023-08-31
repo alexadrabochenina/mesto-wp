@@ -41,10 +41,16 @@
                 <button type="button" class="popup__close">
                     <img src="images/popop__close.svg" class="popup__close-icon" alt="Крестик">
                 </button>
-                <form class="popup__info" name="edit">
-                    <input type="text" class="popup__input popup__input_text_name" name="name" placeholder="Имя Фамилия">
-                    <input type="text" class="popup__input popup__input_text_subtitle" name="subtitle" placeholder="Деятельность">
-                    <button type="submit" class="popup__button">Сохранить</button>
+                <form class="popup__info" name="edit" novalidate>
+                    <label class="popup__field">
+                        <input type="text" class="popup__input popup__input_text_name" name="name" placeholder="Имя Фамилия" required minlength="2" maxlength="40" value="Александра Боченина">
+                        <span class="name-error popup__error"></span>
+                    </label>
+                    <label class="popup__field">
+                        <input type="text" class="popup__input popup__input_text_subtitle" name="subtitle" placeholder="Деятельность" required minlength="2" maxlength="200" value="Исследователь красивых мест">
+                        <span class="subtitle-error popup__error"></span>
+                    </label>
+                    <button type="submit" class="popup__submit popup__button popup__button_inactive" disabled>Сохранить</button>
                 </form>
             </div>
         </div>
@@ -54,10 +60,16 @@
                 <button type="button" class="popup__close">
                     <img src="images/popop__close.svg" class="popup__close-icon" alt="Крестик">
                 </button>
-                <form class="popup__info" name="edit">
-                    <input type="text" class="popup__input popup__input_text_place-name" name="place-name" placeholder="Название">
-                    <input type="text" class="popup__input popup__input_text_place-link" name="place-url" placeholder="Ссылка на картинку">
-                    <button type="submit" class="popup__button">Создать</button>
+                <form class="popup__info" name="edit" novalidate>
+                    <label class="popup__field">
+                        <input type="text" class="popup__input popup__input_text_place-name" name="place-name" placeholder="Название" required minlength="2" maxlength="30">
+                        <span class="place-name-error popup__error"></span>
+                    </label>
+                    <label class="popup__field">
+                        <input type="url" class="popup__input popup__input_text_place-link" name="place-url" placeholder="Ссылка на картинку" required>
+                        <span class="place-url-error popup__error"></span>
+                    </label>
+                    <button type="submit" class="popup__submit popup__button popup__button_inactive" disabled>Создать</button>
                 </form>
             </div>
         </div>
@@ -82,5 +94,6 @@
         </article>
     </template>
     <script src="scripts/index.js"></script>
+    <script src="scripts/validate.js"></script>
 </body>
 </html>
