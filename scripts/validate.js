@@ -44,7 +44,22 @@ const toggleButtonState = (inputList,buttonElement) => {
       buttonElement.classList.remove('popup__button_inactive');
       buttonElement.disabled = false;
     }
-};
+}
+
+function validateForm(formElement) {
+    const inputList = Array.from(formElement.querySelectorAll(validationConfig.inputSelector));
+    const buttonElement = formElement.querySelector('.popup__submit');
+
+    inputList.forEach((inputElement) => checkInputValidity(formElement, inputElement, validationConfig));
+    toggleButtonState(inputList, buttonElement);
+}
+
+function toggleFormButton(formElement) {
+    const inputList = Array.from(formElement.querySelectorAll(validationConfig.inputSelector));
+    const buttonElement = formElement.querySelector('.popup__submit');
+
+    toggleButtonState(inputList, buttonElement);
+}
 
 const setEventListeners = (formElement, config) => {
     const inputList = Array.from(formElement.querySelectorAll(config.inputSelector));
