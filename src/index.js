@@ -1,3 +1,7 @@
+import './pages/index.css';
+import { createPhotoItem } from './card.js';
+import { openPopup, closePopup } from './modal.js';
+
 const popupEdit = document.querySelector('.popup_edit');
 const popupEditForm = popupEdit.querySelector('.popup__info');
 const popupEditNameEl = popupEdit.querySelector('.popup__input_text_name');
@@ -58,34 +62,6 @@ function addPhoto(nameValue, link) {
     renderPhotoItem(createPhotoItem(nameValue, link));
 }
 
-function createPhotoItem(nameValue, link){
-    const photoTemplate = document.querySelector('#photo-template').content;
-    const photoItemElement = photoTemplate.querySelector('.photo__item').cloneNode(true);
-    const photoNameEl = photoItemElement.querySelector('.photo__item-info-text');
-    const photoImageEl = photoItemElement.querySelector('.photo__item-picture');
-
-    photoImageEl.src = link;
-    photoNameEl.textContent = nameValue;
-    
-    photoImageEl.addEventListener('click', function(event) {
-        popupImagePhotoEl.src = event.target.src;
-        popupImageCaptionEl.textContent = photoNameEl.textContent;
-        
-        openPopup(popupImage);
-    });
-
-    const likeBtn = photoItemElement.querySelector('.photo__item-info-button');
-    likeBtn.addEventListener('click', function(evt) {
-        evt.target.classList.toggle('photo__item-info-button_active');
-    });
-    const deleteBtn = photoItemElement.querySelector('.photo__item-info-delete');
-    deleteBtn.addEventListener('click', function() {
-        photo.removeChild(photoItemElement);
-    });
-
-    return photoItemElement;
-}
-
 function renderPhotoItem(photoItem){
     photo.prepend(photoItem);
 }
@@ -132,18 +108,6 @@ function submitAddPopup(event) {
     popupAddLinkEl.value = '';
     toggleFormButton(popupAdd);
 }
-
-function openPopup(popup) {
-    popup.classList.add('popup_opened');
-    document.addEventListener('keydown', closePopupByEscape);
-}
-
-function closePopup(popup) {
-    popup.classList.remove('popup_opened');
-    document.removeEventListener('keydown', closePopupByEscape);
-}
-
-
 openAddPopupBtn.addEventListener('click', openAddPopup);
 closeAddPopupBtn.addEventListener('click', function() {
     closePopup(popupAdd);

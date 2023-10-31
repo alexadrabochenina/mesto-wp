@@ -3,31 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="pages/index.css">
   <link rel="icon" href="#">
   <title>Mesto</title>
 </head>
 <body>
     <div class="page">
         <header class="header">
-            <img src="images/header_logo.svg" class="header__logo" alt="Фото заголовка">
+            <img src="<%=require('../images/header_logo.svg')%>" class="header__logo" alt="Фото заголовка">
         </header>
         <main class="content">
             <section class="profile">
                 <div class="profile__info-container">
-                    <img src="images/profile__avatar.jpeg" class="profile__logo" alt="Аватарка">
+                    <img src="<%=require('../images/profile__avatar.jpeg')%>" class="profile__logo" alt="Аватарка">
                     <div class="profile__info">
                         <div class="profile__info-item">
                             <h1 class="profile__info-title">Александра Боченина</h1>
                             <button type="button" class="profile__edit">
-                                <img src="images/profile__edit-photo.svg" class="profile__edit-photo" alt="Кнопка редактировать">
+                                <img src="<%=require('../images/profile__edit-photo.svg')%>" class="profile__edit-photo" alt="Кнопка редактировать">
                             </button>
                         </div>
                         <p class="profile__info-subtitle">Исследователь красивых мест</p>
                     </div>
                 </div>
                 <button type="button" class="profile__add">
-                    <img class="profile__add-photo" src="images/profile__add-photo.svg" alt="Кнопка добавить фото">
+                    <img class="profile__add-photo" src="<%=require('../images/profile__add-photo.svg')%>" alt="Кнопка добавить фото">
                 </button>
             </section>
             <section class="photo" aria-label="Секция с фото-галереей"></section>
@@ -39,7 +38,7 @@
             <div class="popup__container">
                 <h2 class="popup__heading">Редактировать профиль</h2>
                 <button type="button" class="popup__close">
-                    <img src="images/popop__close.svg" class="popup__close-icon" alt="Крестик">
+                    <img src="<%=require('../images/popop__close.svg')%>" class="popup__close-icon" alt="Крестик">
                 </button>
                 <form class="popup__info" name="edit" novalidate>
                     <label class="popup__field">
@@ -58,7 +57,7 @@
             <div class="popup__container">
                 <h2 class="popup__heading">Новое место</h2>
                 <button type="button" class="popup__close">
-                    <img src="images/popop__close.svg" class="popup__close-icon" alt="Крестик">
+                    <img src="<%=require('../images/popop__close.svg')%>" class="popup__close-icon" alt="Крестик">
                 </button>
                 <form class="popup__info" name="edit" novalidate>
                     <label class="popup__field">
@@ -76,7 +75,7 @@
         <div class="popup popup_image popup_dark">
             <figure class="popup__photo-container">
                 <button type="button" class="popup__close">
-                    <img src="images/popop__close.svg" class="popup__close-icon" alt="Крестик">
+                    <img src="<%=require('../images/popop__close.svg')%>" class="popup__close-icon" alt="Крестик">
                 </button>
                 <img class="popup__photo" src="_blank" alt="Большое фото">
                 <figcaption class="popup__caption"></figcaption>
@@ -93,7 +92,5 @@
             </div>
         </article>
     </template>
-    <script src="scripts/validate.js"></script>
-    <script src="scripts/index.js"></script>
 </body>
 </html>
