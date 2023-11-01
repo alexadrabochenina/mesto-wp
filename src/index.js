@@ -1,6 +1,8 @@
 import './pages/index.css';
-import { createPhotoItem } from './card.js';
+import { addPhoto } from './card.js';
 import { openPopup, closePopup } from './modal.js';
+import { enableValidation, toggleFormButton, validateForm } from './validation.js'
+import { initialCards } from './cards.js';
 
 const popupEdit = document.querySelector('.popup_edit');
 const popupEditForm = popupEdit.querySelector('.popup__info');
@@ -19,57 +21,23 @@ const popupAddLinkEl = popupAdd.querySelector('.popup__input_text_place-link');
 const closeAddPopupBtn = popupAdd.querySelector('.popup__close');
 const openAddPopupBtn = document.querySelector('.profile__add');
 
-const likeBtn = document.querySelector('.photo__item-info-button');
-const photo = document.querySelector('.photo');
-
-const popupImage = document.querySelector('.popup_image');
-const popupImagePhotoEl = popupImage.querySelector('.popup__photo');
-const popupImageCaptionEl = popupImage.querySelector('.popup__caption');
-const closeImagePopupBtn = popupImage.querySelector('.popup__close');
-
-const initialCards = [
-    {
-       name: 'Сочи',
-       link: 'images/Sochi.jpg'
-    },
-    {
-        name: 'Крым',
-        link: 'images/Cremia.jpg'
-    },
-    {
-        name: 'Алтай',
-        link: 'images/Altai.jpg'
-    },
-    {
-        name: 'Байкал',
-        link: 'images/Baikal.jpg'
-    },
-    {
-        name: 'Дагестан',
-        link: 'images/Dagestan.jpg'
-    },
-    {
-        name: 'Кападокия',
-        link: 'images/Capadokia.jpg'
-    }
-];
+const validationConfig = {
+    formSelector: '.popup__info', 
+    inputSelector: '.popup__input',
+    submitButtonSelector: '.popup__submit',
+    inactiveButtonClass: 'popup__button_inactive',
+    inputErrorClass: 'popup__input_type_error',
+    errorClass: 'popup__error_visible'
+}
 
 initialCards.forEach(function (item) {
     addPhoto(item.name, item.link)
 });
 
-function addPhoto(nameValue, link) {
-    renderPhotoItem(createPhotoItem(nameValue, link));
-}
-
-function renderPhotoItem(photoItem){
-    photo.prepend(photoItem);
-}
-
 function openEditPopup() {
     popupEditNameEl.value = titleEditEl.textContent;
     popupEditSubtitleEl.value = subtitleEditEl.textContent;
-    validateForm(popupEdit);
+    validateForm(popupEdit, validationConfig);
 
     openPopup(popupEdit);
 }
@@ -81,12 +49,6 @@ function submitEditPopup(event) {
     subtitleEditEl.textContent = popupEditSubtitleEl.value;
     
     closePopup(popupEdit);
-}
-
-function closePopupByEscape(event) {
-    if (event.key === 'Escape') {
-        closePopup(document.querySelector('.popup_opened'));
-    }
 }
 
 openEditPopupBtn.addEventListener('click', openEditPopup);
@@ -106,19 +68,18 @@ function submitAddPopup(event) {
 
     popupAddNameEl.value = '';
     popupAddLinkEl.value = '';
-    toggleFormButton(popupAdd);
+    toggleFormButton(popupAdd, validationConfig);
 }
 openAddPopupBtn.addEventListener('click', openAddPopup);
 closeAddPopupBtn.addEventListener('click', function() {
     closePopup(popupAdd);
 });
 popupAddForm.addEventListener('submit', submitAddPopup);
-closeImagePopupBtn.addEventListener('click',function() {
-    closePopup(popupImage);
-});
 
 popups.forEach((popup) => popup.addEventListener('mousedown', (evt) => {
     if (evt.target.classList.contains('popup')) {
         closePopup(popup)
     }
 }));
+
+enableValidation(validationConfig);
