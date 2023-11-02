@@ -1,6 +1,6 @@
-import './pages/index.css';
-import { addPhoto } from './card.js';
-import { openPopup, closePopup } from './modal.js';
+import '../pages/index.css';
+import { createPhotoItem } from './card.js';
+import { openPopup, closePopup, closeOnMouseDown } from './modal.js';
 import { enableValidation, toggleFormButton, validateForm } from './validation.js'
 import { initialCards } from './cards.js';
 
@@ -21,6 +21,13 @@ const popupAddLinkEl = popupAdd.querySelector('.popup__input_text_place-link');
 const closeAddPopupBtn = popupAdd.querySelector('.popup__close');
 const openAddPopupBtn = document.querySelector('.profile__add');
 
+const popupImage = document.querySelector('.popup_image');
+const popupImagePhotoEl = popupImage.querySelector('.popup__photo');
+const popupImageCaptionEl = popupImage.querySelector('.popup__caption');
+const closeImagePopupBtn = popupImage.querySelector('.popup__close');
+
+const photo = document.querySelector('.photo');
+
 const validationConfig = {
     formSelector: '.popup__info', 
     inputSelector: '.popup__input',
@@ -31,8 +38,32 @@ const validationConfig = {
 }
 
 initialCards.forEach(function (item) {
-    addPhoto(item.name, item.link)
+    addPhoto(item.name, item.link, openImagePopup, onLikeClick, onRemoveClick)
 });
+
+function renderPhotoItem(photoItem){
+    photo.prepend(photoItem);
+}
+
+function addPhoto(nameValue, link, onPhotoClick, onLikeClick, onRemoveClick) {
+    renderPhotoItem(createPhotoItem(nameValue, link, onPhotoClick, onLikeClick, onRemoveClick));
+}
+
+function onLikeClick(likeBtn) {
+    likeBtn.classList.toggle('photo__item-info-button_active');
+}
+
+function onRemoveClick(photoEl) {
+    photo.removeChild(photoEl);
+}
+
+function openImagePopup(link, nameValue) {
+    popupImagePhotoEl.src = link;
+    popupImageCaptionEl.textContent = nameValue; 
+    popupImagePhotoEl.alt = nameValue;
+
+    openPopup(popupImage);
+}
 
 function openEditPopup() {
     popupEditNameEl.value = titleEditEl.textContent;
@@ -57,13 +88,17 @@ closeEditPopupBtn.addEventListener('click', function() {
 });
 popupEditForm.addEventListener('submit', submitEditPopup);
 
+closeImagePopupBtn.addEventListener('click',function() {
+    closePopup(popupImage);
+});
+
 function openAddPopup() {
     openPopup(popupAdd);
 }
 
 function submitAddPopup(event) {
     event.preventDefault();
-    addPhoto(popupAddNameEl.value, popupAddLinkEl.value);
+    addPhoto(popupAddNameEl.value, popupAddLinkEl.value, openImagePopup, onLikeClick, onRemoveClick);
     closePopup(popupAdd);
 
     popupAddNameEl.value = '';
@@ -75,11 +110,6 @@ closeAddPopupBtn.addEventListener('click', function() {
     closePopup(popupAdd);
 });
 popupAddForm.addEventListener('submit', submitAddPopup);
-
-popups.forEach((popup) => popup.addEventListener('mousedown', (evt) => {
-    if (evt.target.classList.contains('popup')) {
-        closePopup(popup)
-    }
-}));
+popups.forEach((popup) => closeOnMouseDown(popup));
 
 enableValidation(validationConfig);

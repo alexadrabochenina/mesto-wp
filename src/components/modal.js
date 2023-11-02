@@ -8,6 +8,14 @@ export function closePopup(popup) {
     document.removeEventListener('keydown', closePopupByEscape);
 }
 
+export function closeOnMouseDown(popup) {
+    popup.addEventListener('mousedown', (evt) => {
+        if (evt.target.classList.contains('popup')) {
+            closePopup(popup)
+        }
+    });
+}
+
 function closePopupByEscape(event) {
     if (event.key === 'Escape') {
         closePopup(document.querySelector('.popup_opened'));
