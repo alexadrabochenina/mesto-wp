@@ -13,6 +13,12 @@ const hideInputError = (formElement, inputElement, config) => {
 };
   
 const checkInputValidity = (formElement, inputElement, config) => {
+    if(inputElement.validity.patternMismatch) {
+      inputElement.setCustomValidity(inputElement.dataset.errorMessage);
+    } else {
+      inputElement.setCustomValidity('');
+    }
+
     if (!inputElement.validity.valid) {
       showInputError(formElement, inputElement, inputElement.validationMessage, config);
     } else {
@@ -70,3 +76,12 @@ export function enableValidation(config) {
       setEventListeners(formElement, config);
     });
 };
+
+export const clearValidation = (formElement, config) => {  
+  const inputList = Array.from(formElement.querySelectorAll(config.inputSelector));
+  inputList.forEach(inputElement => hideInputError(formElement, inputElement, config));
+  
+  const buttonElement = formElement.querySelector(config.submitButtonSelector);
+  buttonElement.classList.add(config.inactiveButtonClass);
+  buttonElement.disabled = 'disabled';
+}

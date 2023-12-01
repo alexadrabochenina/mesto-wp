@@ -14,15 +14,18 @@
         <main class="content">
             <section class="profile">
                 <div class="profile__info-container">
-                    <img src="<%=require('../images/profile__avatar.jpeg')%>" class="profile__logo" alt="Аватарка">
+                    <div class="profile__photo-container">
+                        <img src="_blank" class="profile__logo" alt="Аватарка">
+                        <button class="profile__photo"></button>
+                    </div>
                     <div class="profile__info">
                         <div class="profile__info-item">
-                            <h1 class="profile__info-title">Александра Боченина</h1>
+                            <h1 class="profile__info-title"></h1>
                             <button type="button" class="profile__edit">
                                 <img src="<%=require('../images/profile__edit-photo.svg')%>" class="profile__edit-photo" alt="Кнопка редактировать">
                             </button>
                         </div>
-                        <p class="profile__info-subtitle">Исследователь красивых мест</p>
+                        <p class="profile__info-subtitle"></p>
                     </div>
                 </div>
                 <button type="button" class="profile__add">
@@ -34,6 +37,21 @@
         <footer>
             <p class="footer">© 2023 Mesto Russia</p>
         </footer>
+        <div class="popup popup_avatar">
+            <div class="popup__container">
+                <h2 class="popup__heading">Обновить аватар</h2>
+                <button type="button" class="popup__close">
+                    <img src="<%=require('../images/popop__close.svg')%>" class="popup__close-icon" alt="Крестик">
+                </button>
+                <form class="popup__info" name="edit" novalidate>
+                    <label class="popup__field">
+                        <input type="url" class="popup__input popup__input_url_avatar" name="avatar" placeholder="Ссылка на аватар" required>
+                        <span class="avatar-error popup__error"></span>
+                    </label>
+                    <button type="submit" class="popup__submit popup__button popup__button_inactive" disabled>Сохранить</button>
+                </form>
+            </div>
+        </div>
         <div class="popup popup_edit">
             <div class="popup__container">
                 <h2 class="popup__heading">Редактировать профиль</h2>
@@ -42,11 +60,11 @@
                 </button>
                 <form class="popup__info" name="edit" novalidate>
                     <label class="popup__field">
-                        <input type="text" class="popup__input popup__input_text_name" name="name" placeholder="Имя Фамилия" required minlength="2" maxlength="40" value="Александра Боченина">
+                        <input type="text" class="popup__input popup__input_text_name" name="name" placeholder="Имя Фамилия" required minlength="2" maxlength="40" value="Александра Боченина" pattern = "^([A-Za-zА-Яа-яёЁ]+\s)*[A-Za-zА-Яа-яёЁ]+$" data-error-message = "Разрешены только латинские, кириллические буквы, знаки дефиса и пробелы">
                         <span class="name-error popup__error"></span>
                     </label>
                     <label class="popup__field">
-                        <input type="text" class="popup__input popup__input_text_subtitle" name="subtitle" placeholder="Деятельность" required minlength="2" maxlength="200" value="Исследователь красивых мест">
+                        <input type="text" class="popup__input popup__input_text_subtitle" name="subtitle" placeholder="Деятельность" required minlength="2" maxlength="200" value="Исследователь красивых мест" pattern = "^([A-Za-zА-Яа-яёЁ]+\s)*[A-Za-zА-Яа-яёЁ]+$" data-error-message = "Разрешены только латинские, кириллические буквы, знаки дефиса и пробелы">
                         <span class="subtitle-error popup__error"></span>
                     </label>
                     <button type="submit" class="popup__submit popup__button popup__button_inactive" disabled>Сохранить</button>
@@ -61,7 +79,7 @@
                 </button>
                 <form class="popup__info" name="edit" novalidate>
                     <label class="popup__field">
-                        <input type="text" class="popup__input popup__input_text_place-name" name="place-name" placeholder="Название" required minlength="2" maxlength="30">
+                        <input type="text" class="popup__input popup__input_text_place-name" name="place-name" placeholder="Название" required minlength="2" maxlength="30" pattern = "^([A-Za-zА-Яа-яёЁ]+\s)*[A-Za-zА-Яа-яёЁ]+$" data-error-message = "Разрешены только латинские, кириллические буквы, знаки дефиса и пробелы">
                         <span class="place-name-error popup__error"></span>
                     </label>
                     <label class="popup__field">
@@ -88,7 +106,10 @@
             <div class="photo__item-info">
                 <button class="photo__item-info-delete"></button>
                 <h2 class="photo__item-info-text"></h2>
-                <button class="photo__item-info-button"></button>
+                <div class = "photo__item-info-like">
+                    <button class="photo__item-info-button"></button>
+                    <p class = "photo__item-info-number"></p>
+                </div>
             </div>
         </article>
     </template>
