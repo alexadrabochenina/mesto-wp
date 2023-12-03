@@ -60,11 +60,11 @@
                 </button>
                 <form class="popup__info" name="edit" novalidate>
                     <label class="popup__field">
-                        <input type="text" class="popup__input popup__input_text_name" name="name" placeholder="Имя Фамилия" required minlength="2" maxlength="40" value="Александра Боченина" pattern = "^([A-Za-zА-Яа-яёЁ]+\s)*[A-Za-zА-Яа-яёЁ]+$" data-error-message = "Разрешены только латинские, кириллические буквы, знаки дефиса и пробелы">
+                        <input type="text" class="popup__input popup__input_text_name" name="name" placeholder="Имя Фамилия" required minlength="2" maxlength="40" value="Александра Боченина" pattern = "^[a-zA-Zа-яА-ЯёЁ\- ]+$" data-error-message = "Разрешены только латинские, кириллические буквы, знаки дефиса и пробелы">
                         <span class="name-error popup__error"></span>
                     </label>
                     <label class="popup__field">
-                        <input type="text" class="popup__input popup__input_text_subtitle" name="subtitle" placeholder="Деятельность" required minlength="2" maxlength="200" value="Исследователь красивых мест" pattern = "^([A-Za-zА-Яа-яёЁ]+\s)*[A-Za-zА-Яа-яёЁ]+$" data-error-message = "Разрешены только латинские, кириллические буквы, знаки дефиса и пробелы">
+                        <input type="text" class="popup__input popup__input_text_subtitle" name="subtitle" placeholder="Деятельность" required minlength="2" maxlength="200" value="Исследователь красивых мест" pattern = "^[a-zA-Zа-яА-ЯёЁ\- ]+$" data-error-message = "Разрешены только латинские, кириллические буквы, знаки дефиса и пробелы">
                         <span class="subtitle-error popup__error"></span>
                     </label>
                     <button type="submit" class="popup__submit popup__button popup__button_inactive" disabled>Сохранить</button>

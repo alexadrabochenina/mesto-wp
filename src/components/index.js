@@ -61,7 +61,7 @@ Promise.all([getProfileInfo(), getInitialCards()])
         subtitleEditEl.textContent = user.about;
         userAvatarEl.src = user.avatar;
 
-        cardsArray.forEach(item => {
+        cardsArray.reverse().forEach(item => {
             cards[item._id] = item;
             addPhoto(item, openImagePopup, onLikeClick, onRemoveClick)
         });
